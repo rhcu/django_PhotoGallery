@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="container">
+
+{% if photo_list %}
+<h3> Photos </h3>
+    <ul>  
+  {% for photo in photo_list %}
+    {% if photo.image %}
+   <div class="row">
+  <div class="col-md-4">
+    <div class="thumbnail">
+        <a href = "/photohost/{{ photo.id }}"> </a>
+        <img src = '{{photo.image.url}}' alt="{{photo.title}}" width="100%"/>
+        <div class="caption">
+          <p>{{photo.title}}</p>
+          <!-- Details -->
+          <a href = "/photohost/{{ photo.id }}"class = "btn btn-primary btn-sm" > View Details</a>
+          <!-- Edit -->
+          <a href = "/photohost/photo/{{ photo.id }}"class = "btn btn-primary btn-sm" > Edit </a>
+          <!-- Delete -->
+        <form action="{% url 'photo-delete' photo.id %}" method = "post" style = "display:inline;">
+        {% csrf_token %}
+         <input type = "hidden" name = "photo_id" value = "{{photo.id}}"/>
+         <button type="submit" class="btn btn-default btn-sm">
+         <span class = "glyphicon glyphicon-trash"></span>
+         </button>
+         </form>
+        </div>
+    </div>
+  </div>
+  {% endif %}   
+  {% endfor%}
+    </ul>
+{% else %}
+    <h3> You haven't uploaded any photos yet. </h3>
+{% endif %}
+
+{% endblock %}

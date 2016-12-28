@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1> {{photo.title}} </h1>
+<h5> Was posted at {{photo.timestamp}}</h5>
+<img src = "{{ photo.image.url }}">
+
+
+{% endblock %}
