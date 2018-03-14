@@ -3,6 +3,8 @@ Gives to the user an ability to register and upload photos with such felds as ti
 # Requirements
 The project was created using Python 3.5.4, django 1.10, Bootstrap, CSS and HTML. So, installed Python 3.5 and django 1.10 are required.
 # Interface
+[![Build Status](https://travis-ci.org/marco-c/coverage-crawler.svg?branch=master)](https://travis-ci.org/marco-c/coverage-crawler)
+
 The homepage of the project shows all the uploaded photos:
 ![photo gallery](https://cloud.githubusercontent.com/assets/24638220/21531054/53ea6a82-cd6f-11e6-877b-ce80b68dc18d.jpg)
 The registration form for the User:
